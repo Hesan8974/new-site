@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>برای گوگولی | رقیه</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --sky: #dceefa;
+  --pale: #f4f9fd;
+  --blue: #8bbbd8;
+  --navy: #183b59;
+  --petrol: #176477;
+  --ink: #244b66;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  background: var(--white);
+  color: var(--navy);
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+}
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 20%, #c7e4f5 0, transparent 35%),
+    radial-gradient(circle at 90% 85%, #d8eaf6 0, transparent 32%),
+    linear-gradient(140deg, #fbfdff, #eaf5fc);
+}
+
+.orb {
+  position: absolute;
+  border: 1px solid #8bbbd855;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orb.one {
+  width: 280px;
+  height: 280px;
+  top: -100px;
+  right: -90px;
+}
+
+.orb.two {
+  width: 190px;
+  height: 190px;
+  bottom: -65px;
+  left: -50px;
+}
+
+.hero-content {
+  max-width: 650px;
+  animation: fadeIn 1.3s ease both;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--petrol);
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(55px, 12vw, 100px);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.hero h1 span {
+  color: var(--petrol);
+}
+
+.hero p {
+  color: #64839a;
+  line-height: 2.4;
+  font-size: 14px;
+  margin: 15px auto 30px;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 40px;
+  padding: 14px 34px;
+  background: var(--navy);
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: var(--petrol);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px #183b5925;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 25px;
+  color: #7397ae;
+  font-size: 11px;
+}
+
+section {
+  padding: 95px 22px;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.heading small {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--petrol);
+}
+
+.heading h2 {
+  font-size: 28px;
+  margin-top: 12px;
+}
+
+.heading p {
+  color: #7793a6;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.intro {
+  max-width: 680px;
+  margin: auto;
+  text-align: center;
+  font-size: 15px;
+  color: #638198;
+  line-height: 3;
+}
+
+.intro strong {
+  color: var(--petrol);
+}
+
+.gallery {
+  background: var(--pale);
+}
+
+.photos {
+  max-width: 780px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.photo-card {
+  padding: 12px;
+  border-radius: 17px;
+  background: white;
+  box-shadow: 0 10px 30px #183b590c;
+  transition: .35s;
+}
+
+.photo-card:hover {
+  transform: translateY(-7px);
+}
+
+.photo-frame {
+  height: 300px;
+  background: linear-gradient(145deg, #d8eaf6, #eff7fc);
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #638da9;
+  text-align: center;
+  font-size: 13px;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-card h3 {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 16px 5px 5px;
+}
+
+.letter {
+  max-width: 690px;
+  margin: auto;
+  border: 1px solid #dceaf3;
+  background: linear-gradient(145deg, #f3f9fd, white);
+  border-radius: 22px;
+  padding: 45px 35px;
+  text-align: center;
+  box-shadow: 0 15px 40px #183b590b;
+}
+
+.letter .icon {
+  font-size: 34px;
+  margin-bottom: 20px;
+  color: var(--petrol);
+}
+
+.letter p {
+  color: #57788f;
+  font-size: 14px;
+  line-height: 2.9;
+}
+
+.letter strong {
+  color: var(--navy);
+}
+
+.wish {
+  background: var(--navy);
+  text-align: center;
+  color: white;
+  padding: 100px 20px;
+}
+
+.wish h2 {
+  font-size: 30px;
+  margin-bottom: 22px;
+}
+
+.wish p {
+  color: #c7dce9;
+  line-height: 2.7;
+  font-size: 13px;
+}
+
+.wish .heart {
+  font-size: 38px;
+  color: #a9d2e9;
+  margin-top: 28px;
+}
+
+footer {
+  background: #102d45;
+  text-align: center;
+  color: #a5c1d2;
+  padding: 30px 20px;
+  line-height: 2.5;
+}
+
+.signature {
+  color: #d1e8f5;
+  font-size: 19px;
+  margin: 12px 0;
+}
+
+.copyright {
+  font-size: 10px;
+  color: #91afc2;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media(max-width: 600px) {
+  .photos {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-frame {
+    height: 320px;
+  }
+
+  section {
+    padding: 75px 18px;
+  }
+
+  .letter {
+    padding: 35px 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- صفحه شروع -->
+
+<header class="hero">
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+
+  <div class="hero-content">
+    <div class="eyebrow">A LITTLE BLUE MEMORY ✦</div>
+
+    <h1>سلام <span>گوگولی</span></h1>
+
+    <p>
+      یه جای کوچیک توی این دنیای بزرگ اینترنت،<br>
+      فقط برای تو ساخته شده...
+    </p>
+
+    <button class="btn"
+      onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">
+      بیا بریم ببینیم ♡
+    </button>
+  </div>
+
+  <div class="scroll">
+    یه یادگاری کوچیک برای تو ↓
+  </div>
+</header>
+
+<!-- معرفی -->
+
+<section id="intro">
+
+  <div class="heading reveal">
+    <small>JUST FOR YOU</small>
+    <h2>برای رقیه‌ی عزیز</h2>
+    <p>بعضی آدم‌ها خودشون یه اتفاق قشنگن.</p>
+  </div>
+
+  <div class="intro reveal">
+    تو از اون آدم‌هایی هستی که حضورشون
+    می‌تونه یه روز معمولی رو قشنگ‌تر کنه.
+    <br>
+    شاید این فقط یه سایت کوچیک باشه،
+    اما پشت تک‌تک قسمت‌هاش یه عالمه حس خوبه.
+    <br>
+    <strong>تولدت مبارک، گوگولی!</strong>
+  </div>
+
+</section>
+
+<!-- عکس‌ها -->
+
+<section class="gallery">
+
+  <div class="heading reveal">
+    <small>LITTLE MEMORIES</small>
+    <h2>دو قاب دوست‌داشتنی</h2>
+    <p>دو تصویر که هر کدوم یه گوشه از این یادگاری‌ان.</p>
+  </div>
+
+  <div class="photos">
+
+    <div class="photo-card reveal">
+      <div class="photo-frame">
+        <img
+          src="roghayeh.jpg"
+          alt="عکس رقیه"
+          onerror="this.style.display='none';this.parentElement.textContent='عکس رقیه اینجا قرار می‌گیره ✧'">
+      </div>
+      <h3>گوگولیِ دوست‌داشتنی</h3>
+    </div>
+
+    <div class="photo-card reveal">
+      <div class="photo-frame">
+        <img
+          src="character.png"
+          alt="شخصیت محبوب رقیه"
+          onerror="this.style.display='none';this.parentElement.textContent='شخصیت محبوبت اینجا قرار می‌گیره ✧'">
+      </div>
+      <h3>یکی از دوست‌داشتنی‌هات</h3>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- نامه تولد -->
+
+<section>
+
+  <div class="heading reveal">
+    <small>A LETTER FOR YOU</small>
+    <h2>چند خط از ته دل</h2>
+  </div>
+
+  <div class="letter reveal">
+
+    <div class="icon">✉</div>
+
+    <p>
+      تولدت مبارک!
+      <br>
+      امیدوارم سال جدید زندگیت پر از خنده‌های واقعی،
+      اتفاق‌های قشنگ و آرزوهای برآورده‌شده باشه.
+      <br>
+      می‌خوام بدونی که بودنت توی زندگی من
+      واقعاً ارزشمنده.
+      <br>
+      امیدوارم همیشه آدم‌هایی کنارت باشن
+      که قدر قلب قشنگت رو بدونن.
+      <br>
+      <strong>تو لایق بهترین اتفاق‌های دنیایی.</strong>
+      <br>
+      با کلی آرزوی خوب،
+      <br>
+      دوستت ♡
+    </p>
+
+  </div>
+
+</section>
+
+<!-- پایان -->
+
+<section class="wish">
+
+  <h2>تولدت مبارک، رقیه!</h2>
+
+  <p>
+    این صفحه شاید کوچیک باشه،<br>
+    اما امیدوارم لبخندی که به لبت میاره بزرگ باشه.
+    <br>
+    هر وقت دلت خواست، برگرد و دوباره بخونش.
+  </p>
+
+  <div class="heart">♡</div>
+
+</section>
+
+<!-- امضای سازنده -->
+
+<footer>
+
+  <div>
+    ساخته‌شده با عشق، فقط برای رقیه
+  </div>
+
+  <div class="signature">
+  امضا: حسان ♡
+</div>
+
+  <div class="copyright">
+    این یادگاری به‌صورت اختصاصی برای رقیه ساخته شده است.
+    <br>
+    © 2026 · A Little Blue Memory
+  </div>
+
+</footer>
+
+<script>
+
+const observer = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+
+  });
+
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(item => {
+  observer.observe(item);
+});
+
+</script>
+
+</body>
+</html>
